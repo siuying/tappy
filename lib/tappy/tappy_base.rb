@@ -6,8 +6,8 @@ require 'json'
 module Tappy
   class TappyBase < Sinatra::Base
     set :twitter_host, "http://api.twitter.com"
-    set :filter, "Tappy::AgentFilter"
-    set :filter_options, ENV["TAPPY_OPTIONS"] || "foursquare"
+    set :filter, ENV["TAPPY_FILTER_CLASS"] || "Tappy::AgentFilter"
+    set :filter_options, ENV["TAPPY_FILTER_OPTIONS"] || "foursquare"
     
     helpers do 
       def handle_request(url, request_params={}, params={})
