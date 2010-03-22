@@ -4,11 +4,10 @@ module Tappy
     
     def initialize(options)
       @options = options
-      puts "filter options: #{options}"
     end
     
     def filter(response)
-      response
+      response.body
     end
   end
 end
