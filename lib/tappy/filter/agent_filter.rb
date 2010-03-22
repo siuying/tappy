@@ -14,10 +14,9 @@ module Tappy
               if source.match(options)
                 puts "filterer: #{item["source"]}"
               else
-                filtered << json
+                filtered << item
               end
             else
-              puts "not filtered: #{source}"   
               return response.body
             end
           end

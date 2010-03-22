@@ -6,5 +6,5 @@ require 'tappy/filter/filter'
 require 'tappy/filter/agent_filter'
 
 module Tappy
-  VERSION = '1.0.5'
+  VERSION = '1.0.6'
 end

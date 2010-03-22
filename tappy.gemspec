@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{tappy}
-  s.version = "1.0.4"
+  s.version = "1.0.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Francis Chong"]
-  s.date = %q{2010-03-22}
+  s.date = %q{2010-03-23}
   s.default_executable = %q{tappy}
   s.description = %q{Twitter API Proxy in ruby.}
   s.email = ["francis@ignition.hk"]

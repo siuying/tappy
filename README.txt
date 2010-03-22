@@ -2,7 +2,11 @@
 
 == DESCRIPTION:
 
-Twitter API Proxy in ruby.
+Twitter API Proxy in ruby. 
+
+This is written to filter annoying twitter message created by Foursquare.
+
+This app is in alpha quality, do not try it at home unless you can figure it out yourself, thank you!
 
 == REQUIREMENTS:
 
