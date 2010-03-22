@@ -12,7 +12,7 @@ module Tappy
             source = item["source"]
             if !source.nil? 
               if source.match(options)
-                puts "filterer: #{item["source"]}"
+                puts "filtered: #{item["source"]}"
               else
                 filtered << item
               end
