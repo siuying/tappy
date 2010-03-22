@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'tappy'
+
+host = ARGV[0] || "localhost"
+port = ARGV[1].to_i 
+port = 9090 if port == 0
+@@filter_option = ARGV[2] || "foursquare"
+
+module Tappy
+  class MyTappy < TappyBase
+    set :filter_options, @@filter_option
+  end
+end
+
+puts "Start Tappy server on #{host}:#{port}, options: #{@@filter_option}"
+
+Tappy::MyTappy.run! :host => host, :port => port
