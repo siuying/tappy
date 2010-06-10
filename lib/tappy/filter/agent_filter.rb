@@ -1,5 +1,5 @@
 require 'json'
-response.body
+
 module Tappy
   class AgentFilter < Filter
     def filter(raw_json)      
