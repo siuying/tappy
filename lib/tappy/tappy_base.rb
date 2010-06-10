@@ -24,10 +24,10 @@ module Tappy
       "Hello!"
     end
     
-    get "/search.json" do |url|
+    get "/search.json"
       url = options.twitter_search_host + url
       req_params = {:method => :get}
-      Typhoeus::Request.run(url, req_params).body
+      handle_request(url, req_params, params).body
     end
     
     get %r{^(.+)$} do |url|
