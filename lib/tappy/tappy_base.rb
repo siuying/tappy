@@ -24,7 +24,7 @@ module Tappy
       "Hello!"
     end
     
-    get "/search.json"
+    get "/search.json" do
       url = options.twitter_search_host + url
       req_params = {:method => :get}
       handle_request(url, req_params, params).body
