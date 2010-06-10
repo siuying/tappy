@@ -6,8 +6,8 @@ module Tappy
       @options = options
     end
     
-    def filter(response)
-      response.body
+    def filter(raw_json)
+      raw_json
     end
   end
 end

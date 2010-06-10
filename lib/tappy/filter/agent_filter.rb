@@ -1,9 +1,9 @@
 require 'json'
-
+response.body
 module Tappy
   class AgentFilter < Filter
-    def filter(response)      
-      json = JSON.parse(response.body)
+    def filter(raw_json)      
+      json = JSON.parse(raw_json)
       begin
         if json.class == Array
           filtered = []
@@ -17,16 +17,15 @@ module Tappy
                 filtered << item
               end
             else
-              return response.body
+              return raw_json
             end
           end
-          result = filtered.to_json
-          result
+          return filtered.to_json
         else
-          response.body
+          return raw_json
         end
       rescue
-        response.body
+        return raw_json
       end
     end
   end

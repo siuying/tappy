@@ -21,7 +21,7 @@ module Tappy
     end
 
     get "/" do
-      "Hello!"
+      "Check: <a href='http://github.com/siuying/tappy'>Tappy</a>"
     end
     
     get "/search.json" do
@@ -36,7 +36,7 @@ module Tappy
       response = handle_request(url, req_params)
 
       filter = Object.class_eval(options.filter).new(options.filter_options)
-      filter.filter(response)
+      filter.filter(response.body)
     end
 
     post %r{^(.+)$} do |url|
