@@ -27,8 +27,14 @@ This app is in alpha quality, do not try it at home unless you can figure it out
 * Then use your entered IP and port as the twitter API proxy in your twitter client.
 
 * To try out Tappy, use "tappy.heroku.com" as twitter API proxy in your twitter 
-client. Note this is for demo purpose only, and will probably not working due 
-to rate limitation.
+client. 
+
+* For use in heroku, install the "apigee":http://docs.heroku.com/apigee addon first
+
+== CHANGE
+
+* 0.2 - added search api; use apigee for virtually unlimited twitter API access
+* 0.1 - initial release
 
 == DEVELOPERS:
 
