@@ -5,7 +5,7 @@ require 'json'
 
 module Tappy
   class TappyBase < Sinatra::Base
-    set :twitter_host, "http://api.twitter.com"
+    set :twitter_host, 'http://'+ENV['APIGEE_TWITTER_API_ENDPOINT']
     set :filter, ENV["TAPPY_FILTER_CLASS"] || "Tappy::AgentFilter"
     set :filter_options, ENV["TAPPY_FILTER_OPTIONS"] || "foursquare"
     
