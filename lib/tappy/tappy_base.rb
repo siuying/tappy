@@ -27,10 +27,7 @@ module Tappy
     get "/search.json" do |url|
       url = options.twitter_search_host + url
       req_params = {:method => :get}
-      response = handle_request(url, req_params)
-
-      filter = Object.class_eval(options.filter).new(options.filter_options)
-      filter.filter(response)
+      handle_request(url, req_params).body
     end
     
     get %r{^(.+)$} do |url|
