@@ -5,7 +5,9 @@ require 'json'
 
 module Tappy
   class TappyBase < Sinatra::Base
-    set :twitter_host, 'http://' + ENV['APIGEE_ENDPOINT']
+    set :twitter_host, 'http://' + (ENV['APIGEE_TWITTER_ENDPOINT'] || "api.twitter.com")
+    set :twitter_search_host, 'http://' + (ENV['APIGEE_TWITTER_SEARCH_ENDPOINT'] || "search.twitter.com")
+
     set :filter, ENV["TAPPY_FILTER_CLASS"] || "Tappy::AgentFilter"
     set :filter_options, ENV["TAPPY_FILTER_OPTIONS"] || "foursquare"
     
@@ -21,7 +23,16 @@ module Tappy
     get "/" do
       "Hello!"
     end
+    
+    get "search.json" do |url|
+      url = options.twitter_search_host + url
+      req_params = {:method => :get}
+      response = handle_request(url, req_params)
 
+      filter = Object.class_eval(options.filter).new(options.filter_options)
+      filter.filter(response)
+    end
+    
     get %r{^(.+)$} do |url|
       url = options.twitter_host + url
       req_params = {:method => :get}
